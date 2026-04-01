@@ -44,8 +44,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:28px 56px;display:fl
 @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 section{padding:110px 64px;}
 .lbl{font-family:'Syne Mono';font-size:.56rem;letter-spacing:.36em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;justify-content:flex-start;gap:10px;margin-bottom:52px;}
-.about-body .lbl{padding-left:64px;}
-#about .lbl{margin-left:-480px;padding-left:480px;}
+
+#about .lbl{margin-left:0;padding-left:0;}
 .lbl::before{content:'[';color:var(--muted2);}
 .lbl::after{content:']';color:var(--muted2);}
 #about{background:var(--gray2);display:grid;grid-template-columns:420px 1fr 1fr;gap:60px;align-items:start;}.about-photo{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;display:block;filter:grayscale(20%) contrast(1.1);}
@@ -279,10 +279,13 @@ footer{background:var(--black);padding:22px 64px;display:flex;justify-content:sp
 <section id="live">
   <p class="lbl">Live Schedule</p>
   <div class="live-list">
-    <p>2026.03.28 — TheBiscats live support 1901 LIVE ROAD -INCHEON- / 仁川　韓国</p>
-    <p>2026.03.29 — TheBiscats live support Cherry Blossom THE Rockabilly Show / 日晃コンベンションホール</p>
-    <p>2026.03.30 — ガチンコ！友情セッション (SOULFUNK SESSION Vol.10) / LiveHouse立川A.A.Company</p>
+
+    <p>2026.04.03 — COOLS 50th Anniversary Live / LIQUIDROOM (TheBiscatsサポート)</p>
     <p>2026.04.04 — カワカミジャム / 下北沢rpm</p>
+    <p>2026.04.19 — 最高な日!! / 下北沢THREE (坂野亘サポート)</p>
+    <p>2026.04.22 — LOVE SPREADS / 下北沢THREE (deadbodyサポート)</p>
+    <p>2026.04.24 — Kaito Hasegawa presents "Fluid Humanity" / 渋谷 FS. (坂野亘サポート)</p>
+    <p>2026.04.25 — GOLDEN AGE PRESENTS The Biscats TOKUSHIMA LIVE / ゴールデンエイジ徳島 (TheBiscatsサポート)</p>
   </div>
 </section>
 <section id="works">
@@ -502,7 +505,7 @@ footer{background:var(--black);padding:22px 64px;display:flex;justify-content:sp
         <p>楽曲提供・アレンジ</p>
         <p>レコーディングセッション</p>
         <p>その他お問い合わせ</p><br>
-        <p>Mail: <a href="mailto:ryuroadworn@gmail.com">ryuroadworn@gmail.com</a></p>
+        <p>Mail: <a href="/cdn-cgi/l/email-protection#2d5f54585f424c495a425f436d4a404c4441034e4240"><span class="__cf_email__" data-cfemail="f4868d81869b9590839b869ab49399959d98da979b99">[email&#160;protected]</span></a></p>
       </div>
     </div>
 
@@ -512,7 +515,7 @@ footer{background:var(--black);padding:22px 64px;display:flex;justify-content:sp
   <div class="ft-logo">R<span>.</span>KANO</div>
   <span class="ft-copy">© 2026 狩野龍太郎 — Keyboardist / Composer. NOMAD POP.</span>
 </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 var dot=document.getElementById('curDot'),ring=document.getElementById('curRing');
 var mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;});
@@ -675,6 +678,4 @@ setInterval(function(){var r=Math.floor(Math.random()*(keyEls.length-12));[0,4,7
 })();setPositions(0);
 })();
 
-var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('on');});},{threshold:0,rootMargin:'0px'});
-document.querySelectorAll('.sec-fade').forEach(function(el){obs.observe(el);});
-</script></body></html>
+var obs=new Intersecti
