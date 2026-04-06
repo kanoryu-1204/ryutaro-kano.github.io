@@ -530,8 +530,10 @@ setInterval(function(){flash(Math.floor(Math.random()*keyEls.length));},110);
 setInterval(function(){var r=Math.floor(Math.random()*(keyEls.length-12));[0,4,7].forEach(function(o){setTimeout(function(){flash(r+o);},Math.random()*60);});},750);
 // CoverFlow
 (function(){
-  var cards = Array.from(document.querySelectorAll('.cf-card'));
-  var items = Array.from(document.querySelectorAll('.tracklist-item'));
+  var stage1 = document.getElementById('cfStage');
+  var cards = Array.from(stage1.querySelectorAll('.cf-card'));
+  var trackList1 = document.getElementById('trackList');
+  var items = trackList1 ? Array.from(trackList1.querySelectorAll('.tracklist-item')) : [];
   var titleEl = document.getElementById('cfTitle');
   var subEl   = document.getElementById('cfSub');
   var total   = cards.length;
@@ -544,8 +546,8 @@ setInterval(function(){var r=Math.floor(Math.random()*(keyEls.length-12));[0,4,7
     return { vid: c.dataset.vid, title: c.querySelector('.tl-title') ? c.querySelector('.tl-title').textContent : 'Track' };
   });
   // read titles from tracklist
-  var tlTitles = Array.from(document.querySelectorAll('.tl-title')).map(function(el){return el.textContent;});
-  var tlSubs   = Array.from(document.querySelectorAll('.tl-sub')).map(function(el){return el.textContent;});
+  var tlTitles = items.length ? items.map(function(el){return el.querySelector('.tl-title') ? el.querySelector('.tl-title').textContent : '';}) : cards.map(function(c){return c.dataset.title||'';});
+  var tlSubs   = items.length ? items.map(function(el){return el.querySelector('.tl-sub') ? el.querySelector('.tl-sub').textContent : '';}) : cards.map(function(c){return c.dataset.sub||'';});
 
   function setPositions(activeIdx) {
     cards.forEach(function(card, i) {
@@ -678,4 +680,8 @@ setInterval(function(){var r=Math.floor(Math.random()*(keyEls.length-12));[0,4,7
 })();setPositions(0);
 })();
 
-var obs=new Intersecti
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target);}});},{threshold:0.15});
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+</script>
+</body>
+</html>
