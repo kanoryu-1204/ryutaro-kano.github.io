@@ -595,11 +595,13 @@ setInterval(function(){var r=Math.floor(Math.random()*(keyEls.length-12));[0,4,7
     setPositions(current);
   }
 
-  cards.forEach(function(card, i) {
-    card.addEventListener('click', function() {
-      if (!card.classList.contains('active')) { goTo(i); return; }
-      window.open('https://www.youtube.com/watch?v=' + card.dataset.vid, '_blank');
-    });
+  stage1.addEventListener('click', function(e) {
+    var card = e.target.closest('.cf-card');
+    if (!card) return;
+    var i = cards.indexOf(card);
+    if (i < 0) return;
+    if (!card.classList.contains('active')) { goTo(i); return; }
+    window.open('https://www.youtube.com/watch?v=' + card.dataset.vid, '_blank');
   });
   items.forEach(function(item, i) {
     item.addEventListener('click', function() { goTo(i); });
@@ -668,11 +670,13 @@ setInterval(function(){var r=Math.floor(Math.random()*(keyEls.length-12));[0,4,7
     items.forEach(function(it,i){it.classList.toggle('active',i===current);});
     setPositions(current);
   }
-  cards.forEach(function(card,i){
-    card.addEventListener('click',function(){
-      if(!card.classList.contains('active')){goTo(i);return;}
-      window.open('https://www.youtube.com/watch?v='+card.dataset.vid,'_blank');
-    });
+  stage2.addEventListener('click',function(e){
+    var card=e.target.closest('.cf-card');
+    if(!card)return;
+    var i=cards.indexOf(card);
+    if(i<0)return;
+    if(!card.classList.contains('active')){goTo(i);return;}
+    window.open('https://www.youtube.com/watch?v='+card.dataset.vid,'_blank');
   });
   items.forEach(function(item,i){item.addEventListener('click',function(){goTo(i);});});
   window.addEventListener('resize',function(){setPositions(current);});
